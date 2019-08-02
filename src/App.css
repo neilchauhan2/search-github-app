@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap");
+
+*,
+button,
+input {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.navbar {
+  font-weight: 600;
+  font-size: 14px !important;
+  color: #484848 !important;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px !important;
+}
+
+.hero {
+  margin-top: 2em !important;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px !important;
+  border-radius: 10px;
+}
