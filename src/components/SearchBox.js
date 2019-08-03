@@ -1,6 +1,25 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { getUser, getUserRepos } from "../store/actions/githubActions";
 
 class SearchBox extends Component {
+  state = {
+    username: ""
+  };
+
+  onChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+
+  onSubmit = e => {
+    e.preventDefault();
+    console.log(this.state.username);
+    this.props.getUser(this.state.username);
+    this.props.getUserRepos(this.state.username);
+  };
+
   render() {
     return (
       <section className="hero container">
@@ -20,7 +39,7 @@ class SearchBox extends Component {
               </p>
               <p className="control">
                 <button
-                  onClick={this.onClick}
+                  onClick={this.onSubmit}
                   className="button is-info url-btn is-medium "
                 >
                   Search
@@ -34,4 +53,14 @@ class SearchBox extends Component {
   }
 }
 
-export default SearchBox;
+const mapStateToProps = state => {
+  return {
+    user: state.github.user,
+    repos: state.github.repos
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { getUser, getUserRepos }
+)(SearchBox);

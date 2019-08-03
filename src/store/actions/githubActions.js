@@ -1,13 +1,13 @@
 import { SET_LOADING, CLEAR_USERS, GET_USER, GET_REPOS } from "./types";
 import axios from "axios";
 
-const githubClientId = process.env.REACT_APP_GITHUB_CLIENT_ID;
-const githubClientSecret = process.env.REACT_APP_GITHUB_CLIENT_SECRET;
+const githubClientId = process.env.REACT_APP_CLIENT_ID;
+const githubClientSecret = process.env.REACT_APP_CLIENT_SECRET;
 
 // Get User
 export const getUser = username => dispatch => {
   setLoading();
-
+  console.log(username);
   axios
     .get(
       `https://api.github.com/users/${username}?client_id=${githubClientId}&client_secret=${githubClientSecret}`

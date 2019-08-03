@@ -6,7 +6,13 @@ import {
   GET_REPOS
 } from "../actions/types";
 
-export default (state, action) => {
+const initState = {
+  user: {},
+  repos: [],
+  loading: false
+};
+
+export default (state = initState, action) => {
   switch (action.type) {
     case SEARCH_USERS:
       return {
