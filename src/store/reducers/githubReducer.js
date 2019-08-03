@@ -7,7 +7,7 @@ import {
 } from "../actions/types";
 
 const initState = {
-  user: {},
+  user: null,
   repos: [],
   loading: false
 };

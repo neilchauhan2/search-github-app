@@ -1,56 +1,61 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+
+import Repo from "./Repo";
 // import Spinner from "./layouts/Spinner";
 
 class User extends Component {
   render() {
+    const { user, repos } = this.props;
     return (
-      <div className="container user-container">
-        <div className="columns">
-          <div className="column is-3">
-            <div className="user-image">
-              <figure class=" image is-128x128">
-                <img
-                  alt="user"
-                  src="https://bulma.io/images/placeholders/128x128.png"
-                />
-                <div className="info">
-                  <div className=" is-size-2 info-name"> Neil Chauhan </div>
-                  <div className=" is-size-3 info-username">neilchauhan2</div>
+      <div>
+        {user ? (
+          <div className="container user-container">
+            <div className="columns">
+              <div className="column is-3">
+                <div className="user-image">
+                  <figure class=" image is-128x128">
+                    <img alt="user" src={user.avatar_url} />
+                    <div className="info">
+                      <div className=" is-size-3 has-text-centered info-name">
+                        {" "}
+                        {user.name}{" "}
+                      </div>
+                      <div className=" is-size-4 has-text-centered info-username">
+                        {user.login}
+                      </div>
+                    </div>
+                    <button className="is-fullwidth profile-btn button is-link">
+                      View Profile
+                    </button>
+                  </figure>
                 </div>
-                <button className="is-fullwidth profile-btn button is-link">
-                  View Profile
-                </button>
-              </figure>
-            </div>
-          </div>
+              </div>
 
-          <div className="column">
-            <div className="conatainer">
-              <div className="columns is-multiline">
-                <div className=" is-size-6 column is-2 tag is-primary ">
-                  Repositories:{" "}
+              <div className="column has-text-centered">
+                <div className="conatainer">
+                  <div className="columns is-multiline">
+                    <div className=" is-size-6 column is-2 tag is-primary ">
+                      Repositories: {user.public_repos}
+                    </div>
+                    <div className=" is-size-6 column is-2 tag  is-info">
+                      Followers: {user.followers}
+                    </div>
+                    <div className=" is-size-6 column is-2 tag is-success">
+                      Following: {user.following}
+                    </div>
+                    <div className=" is-size-6 column is-2 tag  is-danger">
+                      Gists: {user.public_gists}
+                    </div>
+                    {repos && repos.map(repo => <Repo repo={repo} />)}
+                  </div>
                 </div>
-                <div className=" is-size-6 column is-2 tag  is-info">
-                  Followers:{" "}
-                </div>
-                <div className=" is-size-6 column is-2 tag is-success">
-                  Following:{" "}
-                </div>
-                <div className=" is-size-6 column is-2 tag  is-danger">
-                  Gists:{" "}
-                </div>
-
-                <div className="column is-4">HEllo</div>
-                <div className="column is-4">HEllo</div>
-                <div className="column is-4">HEllo</div>
-                <div className="column is-4">HEllo</div>
-                <div className="column is-4">HEllo</div>
-                <div className="column is-4">HEllo</div>
               </div>
             </div>
           </div>
-        </div>
+        ) : (
+          ""
+        )}
       </div>
     );
   }
