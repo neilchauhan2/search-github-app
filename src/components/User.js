@@ -14,7 +14,7 @@ class User extends Component {
             <div className="columns">
               <div className="column is-3">
                 <div className="user-image">
-                  <figure class=" image is-128x128">
+                  <figure className=" image is-128x128">
                     <img alt="user" src={user.avatar_url} />
                     <div className="info">
                       <div className=" is-size-3 has-text-centered info-name">
@@ -49,9 +49,9 @@ class User extends Component {
                     <div className=" is-size-6 basic-info column is-2 tag  is-danger">
                       Gists: {user.public_gists}
                     </div>
-                    <div className="repositories">
-                      {repos && repos.map(repo => <Repo repo={repo} />)}
-                    </div>
+
+                    {repos &&
+                      repos.map(repo => <Repo key={repo.id} repo={repo} />)}
                   </div>
                 </div>
               </div>

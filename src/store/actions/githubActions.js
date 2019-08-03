@@ -7,7 +7,6 @@ const githubClientSecret = process.env.REACT_APP_CLIENT_SECRET;
 // Get User
 export const getUser = username => dispatch => {
   dispatch({ type: SET_LOADING });
-  console.log(username);
   axios
     .get(
       `https://api.github.com/users/${username}?client_id=${githubClientId}&client_secret=${githubClientSecret}`

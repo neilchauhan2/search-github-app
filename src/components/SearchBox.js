@@ -17,7 +17,6 @@ class SearchBox extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    console.log(this.state.username);
     this.props.getUser(this.state.username);
     this.props.getUserRepos(this.state.username);
   };
