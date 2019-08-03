@@ -32,7 +32,7 @@ class Navbar extends Component {
     return (
       <header>
         <nav
-          className="navbar is-info"
+          className="navbar is-link"
           role="navigation"
           aria-label="main navigation"
         >
@@ -56,7 +56,16 @@ class Navbar extends Component {
           </div>
 
           <div id="navbarBasicExample" className="navbar-menu">
-            <div className="navbar-end" />
+            <div className="navbar-end">
+              <span className="navbar-item">
+                <Link to="#" className="button is-link is-inverted">
+                  <span className="icon">
+                    <i className="fab fa-github" />
+                  </span>
+                  <span>Code</span>
+                </Link>
+              </span>
+            </div>
           </div>
         </nav>
       </header>
