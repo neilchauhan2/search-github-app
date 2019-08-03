@@ -46,3 +46,26 @@ input {
 .repo-btn {
   margin: 1rem 0 !important;
 }
+
+/* media queries */
+
+@media (max-width: 500px) {
+  :root {
+    font-size: 50%;
+  }
+
+  .hero {
+    width: 350px !important;
+    height: auto !important;
+  }
+
+  .repositories {
+    margin-top: 5rem !important;
+  }
+
+  .basic-info {
+    margin-top: 22rem !important;
+    margin-left: 0.4rem !important;
+    font-size: 100% !important;
+  }
+}

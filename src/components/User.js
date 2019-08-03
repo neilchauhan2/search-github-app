@@ -35,21 +35,23 @@ class User extends Component {
               </div>
 
               <div className="column has-text-centered">
-                <div className="conatainer">
+                <div className="container">
                   <div className="columns is-multiline">
-                    <div className=" is-size-6 column is-2 tag is-primary ">
+                    <div className=" is-size-6 basic-info column is-2 tag is-primary ">
                       Repositories: {user.public_repos}
                     </div>
-                    <div className=" is-size-6 column is-2 tag  is-info">
+                    <div className=" is-size-6 basic-info column is-2 tag  is-info">
                       Followers: {user.followers}
                     </div>
-                    <div className=" is-size-6 column is-2 tag is-success">
+                    <div className=" is-size-6 basic-info column is-2 tag is-success">
                       Following: {user.following}
                     </div>
-                    <div className=" is-size-6 column is-2 tag  is-danger">
+                    <div className=" is-size-6 basic-info column is-2 tag  is-danger">
                       Gists: {user.public_gists}
                     </div>
-                    {repos && repos.map(repo => <Repo repo={repo} />)}
+                    <div className="repositories">
+                      {repos && repos.map(repo => <Repo repo={repo} />)}
+                    </div>
                   </div>
                 </div>
               </div>
