@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getUser, getUserRepos } from "../store/actions/githubActions";
 import User from "./User";
+import Spinner from "./layouts/Spinner";
+
 class SearchBox extends Component {
   state = {
     username: ""
@@ -51,7 +53,7 @@ class SearchBox extends Component {
           </div>
         </section>
         {this.props.loading ? (
-          <h1 className="is-size-4 has-text-centered">Loading...</h1>
+          <Spinner />
         ) : (
           <User user={this.props.user} repos={this.props.repos} />
         )}

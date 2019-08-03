@@ -1,4 +1,4 @@
-import { SET_LOADING, CLEAR_USERS, GET_USER, GET_REPOS } from "./types";
+import { SET_LOADING, GET_USER, GET_REPOS } from "./types";
 import axios from "axios";
 
 const githubClientId = process.env.REACT_APP_CLIENT_ID;
@@ -6,7 +6,7 @@ const githubClientSecret = process.env.REACT_APP_CLIENT_SECRET;
 
 // Get User
 export const getUser = username => dispatch => {
-  setLoading();
+  dispatch({ type: SET_LOADING });
   console.log(username);
   axios
     .get(
@@ -23,7 +23,7 @@ export const getUser = username => dispatch => {
 
 // Get Repos
 export const getUserRepos = username => dispatch => {
-  setLoading();
+  dispatch({ type: SET_LOADING });
 
   axios
     .get(
@@ -36,14 +36,4 @@ export const getUserRepos = username => dispatch => {
         payload: data
       });
     });
-};
-
-// Clear Users
-export const clearUsers = () => dispatch => {
-  dispatch({ type: CLEAR_USERS });
-};
-
-// Set Loading
-export const setLoading = () => dispatch => {
-  dispatch({ type: SET_LOADING });
 };
