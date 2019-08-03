@@ -22,7 +22,7 @@ class Repo extends Component {
           target={"_blank"}
           className="button repo-btn is-fullwidth is-danger"
         >
-          View Repo
+          View Repository
         </a>
       </article>
     );

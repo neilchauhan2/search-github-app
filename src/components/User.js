@@ -25,9 +25,11 @@ class User extends Component {
                         {user.login}
                       </div>
                     </div>
-                    <button className="is-fullwidth profile-btn button is-link">
-                      View Profile
-                    </button>
+                    <a href={user.html_url} target={"_blank"}>
+                      <button className="is-fullwidth profile-btn button is-link">
+                        View Profile
+                      </button>
+                    </a>
                   </figure>
                 </div>
               </div>
