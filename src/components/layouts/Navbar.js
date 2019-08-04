@@ -58,12 +58,15 @@ class Navbar extends Component {
           <div id="navbarBasicExample" className="navbar-menu">
             <div className="navbar-end">
               <span className="navbar-item">
-                <Link to="#" className="button is-link is-inverted">
+                <a
+                  href="https://github.com/neilchauhan2/search-github-app"
+                  className="button is-link is-inverted"
+                >
                   <span className="icon">
                     <i className="fab fa-github" />
                   </span>
                   <span>Code</span>
-                </Link>
+                </a>
               </span>
             </div>
           </div>
