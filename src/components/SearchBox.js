@@ -36,7 +36,7 @@ class SearchBox extends Component {
                     onChange={this.onChange}
                     className="input is-medium "
                     type="text"
-                    placeholder="Enter link to shorten"
+                    placeholder="Enter username to search"
                   />
                 </p>
                 <p className="control">
